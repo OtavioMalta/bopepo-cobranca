@@ -40,3 +40,4 @@ jobs:
         run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.BPP_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
