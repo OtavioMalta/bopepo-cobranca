@@ -1,0 +1,42 @@
+name: Publish package to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main  # Altere isso para o branch de sua preferência
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+
+      - name: Download Apache Commons Lang
+        run: |
+          wget https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+          mkdir -p lib
+          mv commons-lang-2.6.jar lib/
+          
+      - name: Install dependencies
+        run: chmod +x install-dependencies.sh && ./install-dependencies.sh
+      - name: Compile Java code
+        run: mvn compile -DskipTests
+
+      - name: Skip tests and package
+        run: mvn --batch-mode package -DskipTests
+
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEMO_TOKEN }}

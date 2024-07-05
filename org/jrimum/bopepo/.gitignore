@@ -1,0 +1,15 @@
+/BancosSuportados.class
+/Boleto.class
+/BoletoException.class
+/BoletoUtil.class
+/CodigoDeBarras.class
+/CodigoDeBarrasException.class
+/FatorDeVencimento.class
+/LinhaDigitavel$InnerCampo.class
+/LinhaDigitavel$InnerCampo1.class
+/LinhaDigitavel$InnerCampo2.class
+/LinhaDigitavel$InnerCampo3.class
+/LinhaDigitavel$InnerCampo5.class
+/LinhaDigitavel$InnerCampoFormatado.class
+/LinhaDigitavel.class
+/LinhaDigitavelException.class
