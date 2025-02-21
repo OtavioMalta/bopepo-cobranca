@@ -1,5 +1,7 @@
 # Projeto Bopepo Cobranca
 
+![](https://api.visitorbadge.io/api/VisitorHit?user=OtavioMaltaf&repo=bopepo-cobranca&countColor=%237B1E7A)
+
 Este projeto é uma engenharia reversa do projeto open-source [JRimum Bopepo](http://www.jrimum.org), versão 0.2.3.
 
 ## Introdução
